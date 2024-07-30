@@ -5,13 +5,12 @@ import {useState} from 'react'
 import {Dialog, DialogPanel} from '@headlessui/react'
 import {Bars3Icon, XMarkIcon} from '@heroicons/react/24/outline'
 import Image from 'next/image'
-import {getProviders, signIn, signOut, useSession} from "@node_modules/next-auth/react";
+import {getProviders, signIn, signOut, useSession} from '@node_modules/next-auth/react';
 import {Menu, MenuButton, MenuItem, MenuItems} from '@headlessui/react'
-
 
 const navigation = [
     {name: 'Timetable', href: '#'},
-    {name: 'FAQ', href: '#'},
+    {name: 'FAQ', href: '/faq'},
     {name: 'Contact Us', href: '/contact-us'},
 ]
 
