@@ -21,7 +21,7 @@ const handler = NextAuth({
                 },
             },
             async authorize(credentials) {
-                const user = {id: '1', email: 'ig.pomazkov@gmail.com', password: '123456'};
+                const user = {id: '1', email: 'ig.pomazkov@gmail.com', password: '123456'}
 
                 if (credentials?.email === user.email && credentials.password === user.password) {
                     return user
@@ -45,7 +45,7 @@ const handler = NextAuth({
         },
         async signIn({profile}) {
             try {
-                await connectToDB();
+                await connectToDB()
 
                 const isUserExists = await User.findOne({email: profile.email})
                 if (!isUserExists) {
@@ -64,6 +64,10 @@ const handler = NextAuth({
             }
         },
     },
+    pages: {
+        signIn: '/sign-in',
+        signUp: '/sign-up',
+    }
 })
 
-export {handler as GET, handler as POST};
+export {handler as GET, handler as POST}

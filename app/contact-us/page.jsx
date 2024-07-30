@@ -1,8 +1,7 @@
 'use client';
 
-import React from 'react'
-import Image from '@node_modules/next/image';
-import {useState} from "react";
+import React, {useState} from 'react'
+import Image from '@node_modules/next/image'
 
 const initValues = {name: "", email: "", message: ""};
 const initState = {isLoading: false, error: "", values: initValues};

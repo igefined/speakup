@@ -1,7 +1,7 @@
-'use client';
+'use client'
 
-import React from 'react';
-import {SessionProvider} from "next-auth/react";
+import React from 'react'
+import {SessionProvider} from "next-auth/react"
 
 const Provider = ({children, session}) => {
     return (
@@ -11,4 +11,4 @@ const Provider = ({children, session}) => {
     )
 }
 
-export default Provider;
+export default Provider

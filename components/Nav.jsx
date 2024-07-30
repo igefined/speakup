@@ -9,7 +9,7 @@ import {getProviders, signIn, signOut, useSession} from '@node_modules/next-auth
 import {Menu, MenuButton, MenuItem, MenuItems} from '@headlessui/react'
 
 const navigation = [
-    {name: 'Timetable', href: '#'},
+    {name: 'Timetable', href: '/timetable'},
     {name: 'FAQ', href: '/faq'},
     {name: 'Contact Us', href: '/contact-us'},
 ]

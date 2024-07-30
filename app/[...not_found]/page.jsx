@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import React from 'react'
 import Image from '@node_modules/next/image'

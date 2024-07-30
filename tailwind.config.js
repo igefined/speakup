@@ -9,6 +9,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 'gilroy': ['Gilroy-Regular', 'sans-serif'],
+                'gilroy-bold': ['Gilroy-Bold', 'sans-serif'],
                 'gilroy-semi-bold': ['Gilroy-SemiBold', 'sans-serif'],
                 'gilroy-semi-bold-italic': ['Gilroy-SemiBoldItalic', 'sans-serif'],
                 'gilroy-medium-italic': ['Gilroy-MediumItalic', 'sans-serif'],
@@ -17,6 +18,8 @@ module.exports = {
                 'primary-blue': '#0F35D6',
                 'primary-blue-strong': '#1531AC',
                 'primary-blue-weak': '#D3DBFF',
+                'primary-blue-secondary': '#EFF2FF',
+                'primary-blue-light': '#dbe0fb',
                 'dark-grey': '#242424',
                 'light-grey': '#FFFFFFCC',
             },
