@@ -263,8 +263,8 @@ const AccordionItem = ({header, ...rest}) => (
             <div className="flex w-full items-center justify-between">
                 {header}
                 <Image
-                    width="100"
-                    height="100"
+                    width="20"
+                    height="20"
                     className={`ml-auto transition-transform duration-200 ease-out ${
                         isEnter && "rotate-180"
                     }`}
