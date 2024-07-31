@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function SignIn() {
     return (
-        <div className="flex flex-col justify-center lg:px-8 mt-40 mb-20 w-1/3 p-10 shadow-md">
+        <div className="flex flex-col justify-center lg:px-8 mt-40 mb-20 w-1/3 p-10 shadow-2xl rounded-2xl">
             <div className="flex flex-col items-start sm:mx-auto sm:w-full sm:max-w-sm gap-4 text-gray-600">
                 <h2 className="text-center text-3xl font-gilroy-bold leading-9 tracking-tight text-gray-900">
                     Sign in

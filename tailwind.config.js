@@ -30,6 +30,9 @@ module.exports = {
             borderWidth: {
                 'none': '0px',
                 DEFAULT: '1px'
+            },
+            boxShadow: {
+                '2xl': '0px 5px 10px 4px rgba(0.1, 0.1, 0.1, 0.05)'
             }
         },
     },
