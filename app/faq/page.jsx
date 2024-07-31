@@ -190,7 +190,7 @@ const ContactUs = () => {
                 </div>
             </div>
             <div className="banner md:container md:mx-auto bg-primary-blue rounded-3xl sm:mb-40 mb-20 p-10">
-                <h1 className="text-white text-4xl font-gilroy-semi-bold mb-4">Subscribe Now!</h1>
+                <h1 className="text-white text-4xl font-gilroy-semi-bold mb-4 w-full sm:text-left text-center">Subscribe Now!</h1>
                 <p className="text-white font-gilroy">Unlock exclusive access to our latest updates and special
                     offers</p>
             </div>

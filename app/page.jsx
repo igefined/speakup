@@ -163,15 +163,15 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className="banner md:container md:mx-auto bg-primary-blue rounded-3xl sm:mb-40 mb-20 p-10">
-                <h1 className="text-white text-4xl font-gilroy-semi-bold mb-4">Subscribe Now!</h1>
+            <div className="flex justify-center items-center banner md:container md:mx-auto bg-primary-blue rounded-3xl sm:mb-40 mb-20 p-10">
+                <h1 className="text-white text-4xl font-gilroy-semi-bold mb-4 sm:text-left w-full">Subscribe Now!</h1>
                 <p className="text-white font-gilroy">Unlock exclusive access to our latest updates and special
                     offers</p>
             </div>
             <div className="mb-40">
                 <div className="mx-auto grid max-w-1xl grid-cols-1 items-center gap-x-20 lg:max-w-1xl lg:grid-cols-2">
-                    <div>
-                        <h2 className="text-5xl font-bold font-gilroy-semi-bold tracking-tight sm:text-5xl">
+                    <div className="mb-5">
+                        <h2 className="text-5xl font-bold font-gilroy-semi-bold tracking-tight sm:text-5xl mb-10">
                             Meet people from <br/><span className="text-primary-blue">all over the world!</span>
                         </h2>
                         <p className="mt-4 text-gray-500 font-gilroy">Meet, speak, connect! Join our sessions to
@@ -233,7 +233,7 @@ const Home = () => {
             <div className="sm:mb-40 mb-20">
                 <div
                     className="-mt-20 sm:mt-0 mx-auto grid max-w-1xl grid-cols-1 items-center gap-x-20 lg:max-w-1xl lg:grid-cols-2">
-                    <div className="flex mb-10">
+                    <div className="hidden sm:flex mb-10">
                         <Image width="800" height="100" src="/assets/img/bwoman.png" alt="Speak Up"
                                className="rounded-3xl bg-gray-100"/>
                     </div>
@@ -296,8 +296,8 @@ const Home = () => {
             </div>
             <div className="mb-20 sm:mb-40">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div className="mx-auto max-w-2xl lg:text-center">
-                        <p className="mt-2 text-4xl font-gilroy-semi-bold tracking-tight text-gray-900 sm:text-4xl">
+                    <div className="mx-auto max-w-2xl lg:text-center sm:mb-0 mb-10">
+                        <p className="mt-2 text-4xl text-center font-gilroy-semi-bold tracking-tight text-gray-900 sm:text-4xl">
                             What Our Customers Say
                         </p>
                     </div>
