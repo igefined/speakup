@@ -2,6 +2,7 @@ import React from 'react'
 import Carousel from '@components/Carousel'
 import '@styles/carousel.css'
 import Image from 'next/image'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const comments = [
     {
