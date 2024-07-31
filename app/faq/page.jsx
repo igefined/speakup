@@ -206,7 +206,7 @@ const ContactUs = () => {
                         Still have a questions?
                     </h2>
                     <p className="my-6 text-gray-500 font-gilroy">
-                        Have any questions or need support? We're here to help.
+                        Have any questions or need support? We are here to help.
                     </p>
 
                     <form className="my-0 sm:my-10 flex flex-col gap-6">
@@ -262,7 +262,9 @@ const AccordionItem = ({header, ...rest}) => (
         header={({state: {isEnter}}) => (
             <div className="flex w-full items-center justify-between">
                 {header}
-                <img
+                <Image
+                    width="100"
+                    height="100"
                     className={`ml-auto transition-transform duration-200 ease-out ${
                         isEnter && "rotate-180"
                     }`}

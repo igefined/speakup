@@ -16,7 +16,7 @@ export default function SignIn() {
                 <div className="flex flex-col justify-center items-center gap-4">
                     <p className="flex text-3xl font-gilroy-semi-bold">Oops! Page Not Found</p>
                     <div>
-                        <p className="flex justify-center font-gilroy">Looks like you've lost your way in our speaking
+                        <p className="flex justify-center font-gilroy">Looks like you have lost your way in our speaking
                             club
                             maze.</p>
                         <p className="flex justify-center font-gilroy">This page is still in development and will be
