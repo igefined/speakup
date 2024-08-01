@@ -1,4 +1,4 @@
-import {transporter, mailOptions} from '@utils/mail'
+import {transporter, mailOptions} from '@lib/mail'
 
 const CONTACT_MESSAGE_FIELDS = {
     name: "Name",
@@ -33,7 +33,6 @@ export async function POST(request) {
 
         return Response.json({status: 200, message: 'Email sent successfully'})
     } catch (err) {
-        console.log(err)
         return Response.json({status: 500, message: err})
     }
 }

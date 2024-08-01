@@ -1,10 +1,29 @@
 'use client'
 
 import React from 'react'
+import {signIn} from 'next-auth/react'
 
 export default function SignIn() {
+    const onSubmit = async (e) => {
+        e.preventDefault()
+
+        const provider = e.nativeEvent.submitter.id
+        switch (provider) {
+            case 'google': {
+                await signIn('google')
+
+                return
+            }
+            case 'credentials': {
+
+                return
+            }
+        }
+    }
+
     return (
-        <div className="flex flex-col justify-center lg:px-8 mt-40 mb-20 w-1/3 p-10 shadow-2xl rounded-2xl">
+        <div
+            className="flex flex-col justify-center lg:px-8 mt-40 mb-20 w-full sm:1/2 lg:w-1/3 p-10 sm:shadow-2xl rounded-2xl">
             <div className="flex flex-col items-start sm:mx-auto sm:w-full sm:max-w-sm gap-4 text-gray-600">
                 <h2 className="text-center text-3xl font-gilroy-bold leading-9 tracking-tight text-gray-900">
                     Sign in
@@ -13,7 +32,7 @@ export default function SignIn() {
             </div>
 
             <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                <form action="#" method="POST" className="space-y-6 mb-10">
+                <form onSubmit={onSubmit} method="POST" className="space-y-6 mb-10">
                     <div>
                         <div className="relative">
                             <input type="text" id="floating_outlined"
@@ -41,6 +60,7 @@ export default function SignIn() {
                     <div>
                         <button
                             type="submit"
+                            id="credentials"
                             className="flex w-full justify-center rounded-xl bg-primary-blue px-3 py-3 text-md font-gilroy leading-6 text-white shadow-sm hover:bg-primary-blue-strong focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                             Sign in
                         </button>
@@ -49,6 +69,7 @@ export default function SignIn() {
                         </div>
                         <button
                             type="submit"
+                            id="google"
                             className="flex gap-2 w-full justify-center rounded-xl bg-primary-blue-secondary px-3 py-3 text-md font-gilroy leading-6 text-primary-blue-strong shadow-sm hover:bg-primary-blue-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                             Sign in with Google
                             <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
@@ -71,7 +92,9 @@ export default function SignIn() {
                     </div>
                 </form>
                 <p className="flex w-full justify-center font-gilroy text-gray-500">
-                    Need an account? <a href="/sign-up" className="flex ml-1 text-primary-blue-strong font-gilroy-semi-bold underline">Create one</a>
+                    Need an account? <a href="/sign-up"
+                                        className="flex ml-1 text-primary-blue-strong font-gilroy-semi-bold underline">Create
+                    one</a>
                 </p>
             </div>
         </div>

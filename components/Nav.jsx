@@ -174,7 +174,7 @@ const Nav = () => {
                                 ) : (
                                     <div className="py-6">
                                         <button onClick={() => signIn()}
-                                                className="-mx-3 flex w-full rounded-md font-gilroy rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                                                className="-mx-3 flex w-full font-gilroy rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
                                             Sign in
                                         </button>
                                     </div>

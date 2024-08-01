@@ -1,69 +1,37 @@
 import NextAuth from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
-import CredentialsProvider from 'next-auth/providers/credentials'
-import {connectToDB} from '@utils/database'
-import User from '@models/user'
+import {PrismaAdapter} from '@next-auth/prisma-adapter'
+import prisma from '@lib/prisma'
 
 const handler = NextAuth({
+    session: {
+        strategy: "jwt",
+    },
     providers: [
-        CredentialsProvider({
-            name: 'Credentials',
-            credentials: {
-                email: {
-                    label: 'Email:',
-                    type: 'text',
-                    placeholder: 'Enter your email',
-                },
-                password: {
-                    label: 'Password:',
-                    type: 'password',
-                    placeholder: 'Enter your password',
-                },
-            },
-            async authorize(credentials) {
-                const user = {id: '1', email: 'ig.pomazkov@gmail.com', password: '123456'}
-
-                if (credentials?.email === user.email && credentials.password === user.password) {
-                    return user
-                } else {
-                    return null
-                }
-            }
-        }),
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+            profile(profile) {
+                return ({
+                    id: profile.sub,
+                    name: `${profile.given_name} - ${profile.family_name}`,
+                    email: profile.email,
+                    image: profile.picture,
+                    role: profile.role ? profile.role : 'user',
+                })
+            }
         }),
     ],
     callbacks: {
-        async session({session}) {
-            const sessionUser = await User.findOne({email: session.user.email})
-
-            session.user.id = sessionUser._id.toString()
-
-            return session
+        async jwt({token, user}) {
+            return {...token, ...user};
         },
-        async signIn({profile}) {
-            try {
-                await connectToDB()
-
-                const isUserExists = await User.findOne({email: profile.email})
-                if (!isUserExists) {
-                    await User.create({
-                        email: profile.email,
-                        name: profile.name,
-                        username: profile.name.replace(" ", "").toLowerCase(),
-                        image: profile.image,
-                    })
-                }
-
-                return true
-            } catch (e) {
-                console.log(e)
-                return false
-            }
+        async session({session, token}) {
+            session.user.role = token.role;
+            return session;
         },
     },
+    adapter: PrismaAdapter(prisma),
     pages: {
         signIn: '/sign-in',
         signUp: '/sign-up',

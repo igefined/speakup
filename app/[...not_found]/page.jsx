@@ -9,7 +9,7 @@ export default function SignIn() {
 
     return (
         <div className="flex flex-col justify-center items-center lg:px-8 border-red-600 w-full h-screen">
-            <div className="flex flex-col justify-center items-center gap-10 w-1/2">
+            <div className="flex flex-col justify-center items-center gap-10 md:w-1/2">
                 <div className="flex w-full justify-center">
                     <Image width="180" height="100" src="/assets/img/not-found.png" alt="Speka Logo"/>
                 </div>

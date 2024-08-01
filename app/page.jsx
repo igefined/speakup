@@ -2,7 +2,6 @@ import React from 'react'
 import Carousel from '@components/Carousel'
 import '@styles/carousel.css'
 import Image from 'next/image'
-import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const comments = [
     {
@@ -163,7 +162,8 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex justify-center items-center banner md:container md:mx-auto bg-primary-blue rounded-3xl sm:mb-40 mb-20 p-10">
+            <div
+                className="flex justify-center items-center banner md:container md:mx-auto bg-primary-blue rounded-3xl sm:mb-40 mb-20 p-10">
                 <h1 className="text-white text-4xl font-gilroy-semi-bold mb-4 sm:text-left w-full">Subscribe Now!</h1>
                 <p className="text-white font-gilroy">Unlock exclusive access to our latest updates and special
                     offers</p>
