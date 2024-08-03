@@ -1,5 +1,6 @@
 import NextAuth from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
+import CredentialsProvider from 'next-auth/providers/credentials'
 import {PrismaAdapter} from '@next-auth/prisma-adapter'
 import prisma from '@lib/prisma'
 
@@ -9,6 +10,7 @@ const handler = NextAuth({
     },
     providers: [
         GoogleProvider({
+            name: 'google',
             clientId: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
             profile(profile) {
@@ -21,6 +23,7 @@ const handler = NextAuth({
                 })
             }
         }),
+        CredentialsProvider({}),
     ],
     callbacks: {
         async jwt({token, user}) {
